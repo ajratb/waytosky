@@ -21,6 +21,9 @@ public class Calculator {
         System.out.println( "a="+a+" b="+b);
         Adder adder=new Adder();
         System.out.println("a+b="+adder.add(a, b));
+        System.out.println("And now let's divide them");
+        Divider divider=new Divider();
+        System.out.println("a/b=" +divider.divide(a, b));
     }
     
 }
