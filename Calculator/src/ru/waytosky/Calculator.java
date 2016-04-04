@@ -15,7 +15,12 @@ public class Calculator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int a=2;
+        int b=2;
+        System.out.println("let's add a to b: ");
+        System.out.println( "a="+a+" b="+b);
+        Adder adder=new Adder();
+        System.out.println("a+b="+adder.add(a, b));
     }
     
 }
