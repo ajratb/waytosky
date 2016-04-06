@@ -24,6 +24,7 @@ public class Calculator {
         System.out.println("And now let's divide them");
         Divider divider=new Divider();
         System.out.println("a/b=" +divider.divide(a, b));
+        System.out.println("bye-bye");
     }
     
 }
