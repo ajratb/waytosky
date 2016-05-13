@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="246.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="waytosky.usermanagement.UMController">
+   <children>
+      <ListView fx:id="lstUsers" layoutX="23.0" layoutY="41.0" prefHeight="351.0" prefWidth="200.0" />
+      <Label layoutX="23.0" layoutY="14.0" text="Пользователи" />
+      <Button fx:id="btnAddUser" layoutX="23.0" layoutY="408.0" mnemonicParsing="false" onAction="#handlBtnAddUserOnAction" prefHeight="31.0" prefWidth="51.0" text="+" />
+      <Button fx:id="btnRemoveUser" layoutX="98.0" layoutY="408.0" mnemonicParsing="false" onAction="#handlBtnRemoveUserOnAction" prefHeight="31.0" prefWidth="51.0" text="-" />
+      <Button fx:id="btnEditUser" layoutX="172.0" layoutY="408.0" mnemonicParsing="false" onAction="#handlBtnEditUserOnAction" prefHeight="31.0" prefWidth="51.0" text="Edit" />
+   </children>
+</AnchorPane>
