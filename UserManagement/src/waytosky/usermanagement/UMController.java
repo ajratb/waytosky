@@ -30,7 +30,7 @@ public class UMController implements Initializable {
     private Button btnAddUser;
 
     @FXML
-    private ListView<?> lstUsers;
+    private ListView<String> lstUsers;
 
     @FXML
     void handlBtnAddUserOnAction(ActionEvent event) {
