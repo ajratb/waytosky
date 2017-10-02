@@ -23,45 +23,45 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
  *
  * @author Ayrat
  */
-public class TestExtractImgFromPdf {
+public class PDF_Utils {
+
     public static void main(String[] args) throws IOException {
         System.setProperty("sun.java2d.cmm", "sun.java2d.cmm.kcms.KcmsServiceProvider");
-//        InputStream fis = TestExtractImgFromPdf.class.getResourceAsStream("hello.pdf");
-        
+//        InputStream fis = PDF_Utils.class.getResourceAsStream("hello.pdf");
+
         File f = new File("hello.pdf");
 //        OutputStream fos = new FileOutputStream(f);
-        
-        
-         List<RenderedImage> list = getImagesFromPDF(f);
-         File outputfile = new File("image.png");
-         ImageIO.write(list.get(0), "png", outputfile);
-        
+
+        List<RenderedImage> list = getImagesFromPDF(f);
+        File outputfile = new File("image.png");
+        ImageIO.write(list.get(0), "png", outputfile);
+
     }
-    
+
     public static List<RenderedImage> getImagesFromPDF(File file) throws IOException {
-        
+
         PDDocument doc = PDDocument.load(file);
         List<RenderedImage> images = new ArrayList<>();
-    for (PDPage page : doc.getPages()) {
-        images.addAll(getImagesFromResources(page.getResources()));
-    }
-
-    return images;
-}
-
-private static List<RenderedImage> getImagesFromResources(PDResources resources) throws IOException {
-    List<RenderedImage> images = new ArrayList<>();
-
-    for (COSName xObjectName : resources.getXObjectNames()) {
-        PDXObject xObject = resources.getXObject(xObjectName);
-
-        if (xObject instanceof PDFormXObject) {
-            images.addAll(getImagesFromResources(((PDFormXObject) xObject).getResources()));
-        } else if (xObject instanceof PDImageXObject) {
-            images.add(((PDImageXObject) xObject).getImage());
+        for (PDPage page : doc.getPages()) {
+            images.addAll(getImagesFromResources(page.getResources()));
         }
+        doc.close();
+        return images;
     }
 
-    return images;
-}
+    private static List<RenderedImage> getImagesFromResources(PDResources resources) throws IOException {
+        List<RenderedImage> images = new ArrayList<>();
+
+        for (COSName xObjectName : resources.getXObjectNames()) {
+            PDXObject xObject = resources.getXObject(xObjectName);
+
+            if (xObject instanceof PDFormXObject) {
+                images.addAll(getImagesFromResources(((PDFormXObject) xObject).getResources()));
+            } else if (xObject instanceof PDImageXObject) {
+                images.add(((PDImageXObject) xObject).getImage());
+            }
+        }
+
+        return images;
+    }
 }

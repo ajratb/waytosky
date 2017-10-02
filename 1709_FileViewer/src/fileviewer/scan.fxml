@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1000.0" maxWidth="800.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <GridPane prefHeight="257.0" prefWidth="343.0">
          <columnConstraints>
@@ -25,7 +25,7 @@
             <RowConstraints maxHeight="560.0" minHeight="560.0" prefHeight="560.0" valignment="TOP" vgrow="NEVER" />
          </rowConstraints>
          <children>
-            <ImageView fitHeight="560.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fx:id="imgView" fitHeight="560.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@cat.jpg" />
                </image>
@@ -49,11 +49,11 @@
             <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-              <Button fx:id="button" contentDisplay="GRAPHIC_ONLY" onAction="#handleButtonAction" prefHeight="51.0" prefWidth="92.0" text="Click Me!" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="TOP">
+              <Button contentDisplay="GRAPHIC_ONLY" onAction="#onAction_btnSave" prefHeight="51.0" prefWidth="92.0" text="Сохранить" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="TOP">
                <graphic>
                   <FontAwesomeIconView glyphName="SAVE" size="26" />
                </graphic></Button>
-            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Обновить" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onAction_btnRefresh" text="Обновить" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <graphic>
                   <FontAwesomeIconView glyphName="REFRESH" />
                </graphic>
@@ -61,7 +61,7 @@
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Открыть" GridPane.columnIndex="3">
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onAction_btnOpen" text="Открыть" GridPane.columnIndex="3">
                <graphic>
                   <FontAwesomeIconView glyphName="FOLDER" />
                </graphic>
@@ -69,12 +69,12 @@
                   <Insets top="10.0" />
                </GridPane.margin>
             </Button>
-            <Hyperlink contentDisplay="RIGHT" text="Выйти" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Hyperlink contentDisplay="RIGHT" onAction="#onAction_linkExit" text="Выйти" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <graphic>
                   <FontAwesomeIconView glyphName="SIGN_OUT" />
                </graphic>
             </Hyperlink>
-            <Hyperlink text="Настройки" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Hyperlink onAction="#onAction_linkSettings" text="Настройки" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <graphic>
                   <FontAwesomeIconView glyphName="COG" />
                </graphic>

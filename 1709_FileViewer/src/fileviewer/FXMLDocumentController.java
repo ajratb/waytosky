@@ -47,9 +47,10 @@ public class FXMLDocumentController implements Initializable {
 
         if (Files.exists(Paths.get(scan))) {
             ScanAdditionForm form = new ScanAdditionForm(scan);
-            Scene scene = new Scene(form, 800, 1000);
+            Scene scene = new Scene(form, 540, 700);
             Stage stage = new Stage();
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.showAndWait();
         }else{
              //если нет, предлагаем выбрать новую
@@ -59,9 +60,10 @@ public class FXMLDocumentController implements Initializable {
                     = directoryChooser.showDialog(parentStage);
             //перезаписываем пропертиз
             ScanAdditionForm form = new ScanAdditionForm(selectedDirectory.getAbsolutePath());
-            Scene scene = new Scene(form, 800, 1000);
+            Scene scene = new Scene(form, 400, 600);
             Stage stage = new Stage();
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.showAndWait();
             
         }
