@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author Ayrat
  */
-public class MagicTableCells extends Application {
+public class MagicTableCellsApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {

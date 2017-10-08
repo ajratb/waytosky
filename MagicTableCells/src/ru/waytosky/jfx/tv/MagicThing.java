@@ -55,6 +55,11 @@ public class MagicThing {
 //    public void setFavorite(BooleanProperty favorite) {
 //        this.favorite = favorite;
 //    }
+
+    @Override
+    public String toString() {
+        return "MagicThing{" + "favorite=" + favorite.get() + ", status=" + status + ", sendDate=" + sendDate + ", backDate=" + backDate + '}';
+    }
     
     
     
