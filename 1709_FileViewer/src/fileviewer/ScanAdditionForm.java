@@ -5,6 +5,7 @@
  */
 package fileviewer;
 
+import fileviewer.PDF_Utils;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
