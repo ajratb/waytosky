@@ -7,26 +7,17 @@ package ru.waytosky.jfx.tv;
 
 import java.net.URL;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.collections.SetChangeListener.Change;
-import javafx.scene.control.cell.CheckBoxTableCell;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Tab;
+import ru.waytosky.jfx.tv.chance.CheckTable;
 
 /**
  *
@@ -51,6 +42,9 @@ public class MainController implements Initializable {
 
     @FXML
     private TableColumn<MagicThing, String> clmBackDate;
+    
+        @FXML
+    private Tab tabCheckTable;
 
     ObservableList<MagicThing> dataList
             = FXCollections.observableArrayList(
@@ -72,6 +66,8 @@ public class MainController implements Initializable {
         clmFav.setCellFactory(cellFactory);
        
        tvMagic.setItems(dataList);
+       
+       tabCheckTable.setContent(new CheckTable());
 
     }
 

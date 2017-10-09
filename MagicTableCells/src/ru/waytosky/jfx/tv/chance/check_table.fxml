@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tvCheck" editable="true" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="clmFav" prefWidth="75.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="STAR" />
+               </graphic>
+            </TableColumn>
+          <TableColumn fx:id="clmId" prefWidth="75.0" text="id" />
+        </columns>
+      </TableView>
+   </children>
+</fx:root>
