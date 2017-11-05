@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="314.0" prefWidth="474.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.waytosky.chance.MainController">
+   <children>
+      <TableView fx:id="tvMoves" layoutX="14.0" layoutY="36.0" prefHeight="267.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="clmState" prefWidth="104.0" text="Состояние" />
+          <TableColumn fx:id="clmDep" prefWidth="102.0" text="Пордазделение" />
+            <TableColumn prefWidth="75.0" text="Дата">
+               <columns>
+                  <TableColumn fx:id="clmSend" prefWidth="75.0" text="Отправки" />
+                  <TableColumn fx:id="clmReceive" prefWidth="75.0" text="Получения" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="clmScan" prefWidth="56.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CAMERA" size="16.0" />
+               </graphic>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
