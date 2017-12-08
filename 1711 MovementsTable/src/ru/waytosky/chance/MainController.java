@@ -83,9 +83,10 @@ public class MainController implements Initializable {
         MenuItem newItem = new MenuItem("Call PopUp");
         newItem.setOnAction(event -> {
             int index = tvMoves.getSelectionModel().getSelectedIndex();
-            tvMoves.getSelectionModel().getSelectedItem().setEndDate(new Date());
-//                ObservableList<Movement> temp = FXCollections.observableArrayList(tvMoves.getItems());
-            List<Movement> temp = tvMoves.getItems().stream().collect(Collectors.toList());
+            tvMoves.getSelectionModel().getSelectedItem()
+                    .setEndDate(new Date());
+            List<Movement> temp = tvMoves.getItems().stream()
+                    .collect(Collectors.toList());
             tvMoves.getItems().clear();
             tvMoves.getItems().addAll(temp);
             tvMoves.getSelectionModel().select(index);
