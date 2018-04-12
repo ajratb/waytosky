@@ -70,7 +70,7 @@ public class MainController implements Initializable {
     @FXML
     void onAction_btnShowWindow(ActionEvent event) {
         HWND hwnd = User32.INSTANCE.FindWindow(txtWindowClass.getText(), null);
-        PUser32.INSTANCE.ShowWindow(hwnd, WinUser.SW_RESTORE);
+        User32.INSTANCE.ShowWindow(hwnd, WinUser.SW_RESTORE);
     }
 
     @FXML
@@ -98,15 +98,15 @@ public class MainController implements Initializable {
 
         }
 
-        final PUser32 user32 = PUser32.INSTANCE;
+        final User32 user32 = User32.INSTANCE;
         user32.EnumWindows(new WNDENUMPROC() {
             int count = 0;
 
             @Override
             public boolean callback(HWND hWnd, Pointer arg1) {
-                byte[] windowText = new byte[512];
-                user32.GetWindowTextA(hWnd, windowText, 512);
-                String wText = Native.toString(windowText);
+                char[] windowText = new char[512];
+                user32.GetWindowText(hWnd, windowText, 512);
+                String wText = Native.toString(windowText);//, "Windows-1251");
 
                 // get rid of this if block if you want all windows regardless of whether
                 // or not they have text
@@ -114,8 +114,8 @@ public class MainController implements Initializable {
                     return true;
                 }
 
-                byte[] windowClass = new byte[512];
-                user32.GetClassNameA(hWnd, windowClass, 512);
+                char[] windowClass = new char[512];
+                user32.GetClassName(hWnd, windowClass, 512);
                 String wClass = Native.toString(windowClass);
 
                 // get rid of this if block if you want all windows regardless of whether
@@ -131,20 +131,20 @@ public class MainController implements Initializable {
         }, null);
     }
 
-    public interface PUser32 extends StdCallLibrary {
-
-        PUser32 INSTANCE = (PUser32) Native.loadLibrary("user32", PUser32.class);
-
-        boolean EnumWindows(WinUser.WNDENUMPROC lpEnumFunc, Pointer arg);
-
-        int GetWindowTextA(HWND hWnd, byte[] lpString, int nMaxCount);
-
-        int GetClassNameA(WinDef.HWND hWnd,
-                byte[] lpClassName,
-                int nMaxCount);
-
-        boolean ShowWindow(HWND hWnd, int i);
-//        HWND FindWindow(String string, String string1);
-    }
+//    public interface PUser32 extends StdCallLibrary {
+//
+//        PUser32 INSTANCE = (PUser32) Native.loadLibrary("user32", PUser32.class);
+//
+//        boolean EnumWindows(WinUser.WNDENUMPROC lpEnumFunc, Pointer arg);
+//
+//        int GetWindowTextA(HWND hWnd, byte[] lpString, int nMaxCount);
+//
+//        int GetClassNameA(WinDef.HWND hWnd,
+//                byte[] lpClassName,
+//                int nMaxCount);
+//
+//        boolean ShowWindow(HWND hWnd, int i);
+////        HWND FindWindow(String string, String string1);
+//    }
 
 }
