@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="476.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="MainController">
+    <children>
+        <Button fx:id="button" layoutX="231.0" layoutY="154.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Label fx:id="label" layoutX="368.0" layoutY="159.0" minHeight="16" minWidth="69" text="Статус" />
+      <TextField fx:id="txtClass" layoutX="109.0" layoutY="36.0" prefHeight="31.0" prefWidth="331.0" />
+      <TextField fx:id="txtTitle" layoutX="109.0" layoutY="90.0" prefHeight="31.0" prefWidth="331.0" />
+      <Label layoutX="22.0" layoutY="41.0" text="Класс" />
+      <Label layoutX="22.0" layoutY="95.0" text="Заголовок" />
+      <CheckBox fx:id="chBoxFindByTitle" layoutX="22.0" layoutY="159.0" mnemonicParsing="false" text="Искать по заголовку" />
+      <TableView fx:id="tvResults" layoutX="22.0" layoutY="205.0" prefHeight="200.0" prefWidth="430.0">
+        <columns>
+          <TableColumn fx:id="clmHwnd" prefWidth="238.0" text="Окно" />
+          <TableColumn fx:id="clmIsRoot" minWidth="0.0" prefWidth="100.0" text="Корневое" />
+            <TableColumn fx:id="clmIsVisible" prefWidth="91.0" text="Видимое" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>
