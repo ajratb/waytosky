@@ -1,44 +1,22 @@
-/MagicTableCells/nbproject/private/
-/MagicTableCells/build/
-/MagicTableCells/dist/
-/MessageService/nbproject/private/
-/MessageService/build/
-/UserManagement/nbproject/private/
-/FileViewer/nbproject/private/
-/1709_FindUsersApplication/nbproject/private/
-/1709_FindUsersApplication/build/
-/1709_FindUsersApplication/dist/
-/1709_FileViewer/nbproject/private/
-/1709_FileViewer/dist/
-/1709_FileViewer/build/
-/1710_OrderedMoves/nbproject/private/
-/1710_OrderedMoves/build/
-/1710_OrderedMoves/dist/
-/1707 ListViewAndDatePicker Appearance/nbproject/private/
-/1707 ListViewAndDatePicker Appearance/dist/
-/1707 ListViewAndDatePicker Appearance/build/
-/1710 ListAndSelection/nbproject/private/
-/1710 ListViewSelection/nbproject/private/
-/1710 ListViewSelection/build/
-/1710 ListViewSelection/dist/
-/1710 Files Filtration/nbproject/private/
-/1710 Files Filtration/build/
-/1710 Files Filtration/dist/
-/1711 MovementsTable/nbproject/private/
-/1711 MovementsTable/build/
-/1711 MovementsTable/dist/
-/1710 ListViewAndDatePicker Appearance/nbproject/private/
-/1710_OrderedMoves/nbproject/private/
-/ProcessesAndWindows/nbproject/private/
-/ProcessesAndWindows/build/
-/ProcessesAndWindows/dist/
-/18_02_03 ImgFilesWorker/nbproject/private/
-/18_02_03 ImgFilesWorker/build/
-/18_02_03 ImgFilesWorker/dist/
-/FoundWindowInfo/nbproject/private/
-/FoundWindowInfo/build/
-/FoundWindowInfo/dist/
+# Netbeans
+/**/.nb-gradle/
+/**/build/
+/**/nbproject/private/
+/**/dist/
 
-/PostgresBookStore/nbproject/private/
-/PostgresBookStore/build/
-/PostgresBookStore/dist/
+# Maven
+/**/log/
+/**/target/
+
+# Intellij
+/**/.idea/
+*.iml
+*.iws
+/**/jdbc/*.jar
+
+/**/out/
+/**/.gradle/
+/**/gradlew
+/**/gradlew.bat
+/**/gradle/
+/**/gradle.properties
